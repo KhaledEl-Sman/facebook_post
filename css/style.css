@@ -1,0 +1,706 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0 auto;
+    font-family: 'Helvetica';
+    background-color: #F0F2F5;
+}
+
+@font-face {
+    font-family: 'Helvetica-bold';
+    src: url(../fonts/Helvetica-Bold.woff);
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url(../fonts/Helvetica.woff);
+}
+
+/********************************************
+post_1
+********************************************/
+
+.posts .post {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+}
+
+.posts .post .head .right img {
+    cursor: pointer;
+}
+
+.posts .post .head {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.posts .post .head .left div {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2s;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.posts .post .head .left div:hover {
+    background-color: #DDD;
+}
+
+.posts .post .head .left svg {
+    color: #65676B;
+    font-size: 20px;
+}
+
+.posts .post .right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+.posts .post .right div {
+    margin: 0 10px 0 0;
+}
+
+.posts .post .right h3 {
+    font-size: 15px;
+    color: #050505;
+    direction: ltr;
+    margin: 0;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.posts .post .right h3:hover {
+    text-decoration: underline;
+}
+
+.posts .post .right h3 i {
+    color: #1B74E4;
+    font-size: 12px;
+    cursor: default;
+}
+
+.posts .post .right small {
+    color: #65676B;
+    font-size: 13px;
+}
+
+.posts .post .right small svg {
+    font-size: 12px;
+}
+
+.posts .post .description p {
+    direction: rtl;
+    text-align: right;
+    font-size: 16px;
+    margin: 7px 0;
+    color: #050505;
+    padding: 0 16px;
+    overflow-wrap: anywhere;
+}
+
+/********************************************
+post_2
+********************************************/
+
+.post .actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 16px;
+}
+
+.post .actions .right span {
+    color: #65676B;
+    cursor: pointer;
+    position: relative;
+    top: 3px;
+    left: 12px;
+}
+
+.post .actions .right span:hover {
+    text-decoration: underline;
+}
+
+.post .actions .right .all_of_reacts img {
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+    left: 14px;
+}
+
+.post .actions .right .all_of_reacts img:first-of-type {
+    left: 7px;
+    z-index: 3;
+}
+
+.post .actions .right .all_of_reacts img:last-of-type {
+    left: 21px;
+    z-index: 1;
+}
+
+.post .actions .left span {
+    color: #65676B;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.post .actions .left span:hover {
+    text-decoration: underline;
+}
+
+.post .relevant {
+    text-align: left;
+    padding: 7px 16px 0 16px;
+}
+
+.post .relevant span {
+    color: #65676B;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.post .relevant span i {
+    margin: 0 3px;
+}
+
+/********************************************
+make_action
+********************************************/
+
+.make_action {
+    position: relative;
+}
+
+.make_action::after {
+    content: '';
+    position: absolute;
+    width: 94%;
+    height: 1px;
+    background-color: #DDD;
+    left: 3%;
+    top: 0;
+}
+
+.make_action::before {
+    content: '';
+    position: absolute;
+    width: 94%;
+    height: 1px;
+    background-color: #DDD;
+    left: 3%;
+    bottom: 0;
+}
+
+.make_action .action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    direction: ltr;
+    cursor: pointer;
+    transition: .2s;
+    padding: 5px;
+    border-radius: 7px;
+    min-height: 40px;
+}
+
+.make_action .action:hover {
+    background-color: #EEE;
+}
+
+.make_action .action i {
+    width: 18px;
+    color: #65676B;
+}
+
+.make_action .action span {
+    margin: 0 5px;
+    color: #65676B;
+    font-weight: 600;
+}
+
+.make_action .give_it {
+    position: relative;
+}
+
+.make_action .give_it .give_react {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 0 5px;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    z-index: 4;
+    top: -43px;
+    left: -105px;
+    direction: rtl;
+}
+
+.make_action .give_it:hover .give_react {
+    display: flex;
+}
+
+.make_action .give_it .give_react:hover {
+    display: flex;
+}
+
+.make_action .give_it .give_react img {
+    margin: 2px 3px;
+    position: relative;
+    transition: .5s;
+    transform: scale(1.25);
+}
+
+.make_action .give_it .give_react img:hover {
+    transform: scale(2.2);
+}
+
+/********************************************
+comms_1
+********************************************/
+
+.posts {
+    width: 100%;
+    padding: 20px;
+    max-width: 528px;
+    margin: auto;
+}
+
+.comms {
+    padding: 12px 16px;
+}
+
+.comms .do_comm .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.comms .do_comm .top img {
+    margin: 0 0 0 7px;
+}
+
+.comms .do_comm .top input {
+    width: 100%;
+    border-radius: 15px;
+    background: #F0F2F5;
+    border: none;
+    padding: 7px 12px;
+    font-size: 15px;
+    color: #050505;
+}
+
+.comms .do_comm .top input::placeholder {
+    color: #444;
+    font-size: 15px;
+}
+
+.comms .do_comm .top input:focus {
+    border: none;
+    outline: none;
+}
+
+.comms .do_comm small {
+    font-size: 13px;
+    color: #050505;
+    display: block;
+    text-align: right;
+    margin-right: 40px;
+    margin-top: 3px;
+}
+
+/*****************************************
+comms_2
+*****************************************/
+
+.comms .comm .top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+}
+
+.comms .comm {
+    margin: 7px 0;
+    position: relative;
+}
+
+.comms .comm .right_border {
+    position: absolute;
+    right: 1rem;
+    height: calc(100% - 35px);
+    width: 2px;
+    background-color: #F0F2F5;
+    top: 35px;
+    z-index: 1;
+}
+
+.comms .comm .remove_end {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    background-color: white;
+    width: 2px;
+    height: .6rem;
+    z-index: 2;
+}
+
+.comms .comm img {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.comms .comm .description {
+    text-align: right;
+    background-color: #F0F2F5;
+    border-radius: 15px;
+    margin: 0 7px 0 0;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.comms .comm .description h4 {
+    color: #050505;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration-color: #DDD;
+}
+
+.comms .comm .description h4:hover {
+    text-decoration: underline;
+}
+
+.comms .comm .description .line {
+    padding: 0;
+    margin: 0;
+}
+
+.comms .comm .description p {
+    font-size: 15px;
+    color: #050505;
+    text-align: right;
+    display: inline-block;
+    margin: 0;
+}
+
+.comms .comm .reacts {
+    display: flex;
+    align-items: center;
+    padding-right: 44px;
+    padding-top: 4px;
+}
+
+.comms .comm .reacts .give_react {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 0 5px;
+    border-radius: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    z-index: 4;
+}
+
+.comms .comm .reacts .like:hover .give_react {
+    display: flex;
+}
+
+.comms .comm .reacts .give_react:hover {
+    display: flex;
+}
+
+.comms .comm .reacts .give_react img {
+    margin: 2px 3px;
+    position: relative;
+    transition: .5s;
+    transform: scale(1.25);
+}
+
+.comms .comm .reacts .give_react img:hover {
+    transform: scale(2);
+}
+
+.comms .comm .reacts span {
+    color: #65676B;
+    font-size: 13px;
+    padding: 0 5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.comms .comm .reacts span b:hover {
+    text-decoration: underline;
+}
+
+.comms .comm .reacts span:last-of-type {
+    font-weight: 400;
+    cursor: default;
+}
+
+.comms .comm .reacts span:last-of-type:hover {
+    text-decoration: none;
+}
+
+.comms .comm .top .reacts_number {
+    position: absolute;
+    left: 2px;
+    bottom: -12px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 1px 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    z-index: 3;
+}
+
+.comms .comm .top .reacts_number:hover .reacts_view {
+    display: block;
+}
+
+.comms .comm .top .reacts_view {
+    display: none;
+    position: absolute;
+    left: calc(0% - 25px);
+    top: calc(100% + 1px);
+    background-color: rgba(0, 0, 0, .65);
+    border-radius: 7px;
+    padding: 1px 3px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+    z-index: 3;
+    padding: 3px 5px;
+    cursor: pointer;
+    min-width: 105px;
+}
+
+.comms .comm .top .reacts_view:hover {
+    display: block;
+}
+
+.comms .comm .top .reacts_view span {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 3px 2px;
+    color: white;
+    font-size: 12px;
+}
+
+.comms .comm .top .reacts_view span small {
+    font-size: 12px;
+    min-width: 50px;
+    max-width: 55px;
+}
+
+.comms .comm .top .reacts_view span img {
+    margin: 0 2px;
+}
+
+.comms .comm .top .reacts_number img {
+    position: relative;
+    z-index: 2;
+}
+
+.comms .comm .top .reacts_number img:first-of-type {
+    position: relative;
+    left: -3px;
+}
+
+.comms .comm .top .reacts_number img:last-of-type {
+    position: relative;
+    right: -3px;
+    z-index: 1;
+}
+
+.comms .comm .top .reacts_number small {
+    font-size: 13px;
+    margin: 0 0 0 3px;
+}
+
+/**************************************************
+comms_3
+**************************************************/
+
+.comms .comm .replies {
+    text-align: right;
+    position: relative;
+}
+
+.comms .comm .replies .flat_border {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 2.5rem;
+    background-color: #F0F2F5;
+}
+
+.comms .comm .replies .remove_end {
+    position: absolute;
+    right: -3.5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    width: 1rem;
+    height: 2px;
+    z-index: 2;
+}
+
+.comms .comm .replies .show_replies {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 45px;
+}
+
+.comms .comm .replies .show_replies i {
+    transform: rotate(180deg);
+    color: #65676B;
+    font-size: 14px;
+}
+
+.comms .comm .replies .show_replies span {
+    color: #65676B;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0 5px;
+}
+
+.comms .comm .replies .show_replies:hover span {
+    text-decoration: underline;
+}
+
+/************************************************
+comms_4
+************************************************/
+
+.comms .comm .replies .reply_all_replies {
+    padding-right: 35px;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply {
+    position: relative;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .flat_border {
+    position: absolute;
+    right: -23px;
+    top: 16px;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 1rem;
+    background-color: #F0F2F5;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .right_border {
+    position: absolute;
+    right: .8rem;
+    height: calc(100% - 35px);
+    width: 2px;
+    background-color: #F0F2F5;
+    top: 33px;
+    z-index: 1;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .remove_end2 {
+    position: absolute;
+    bottom: 0;
+    right: .8rem;
+    background-color: white;
+    width: 2px;
+    height: 2.27rem;
+    z-index: 2;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .do_comm {
+    padding-right: 30px;
+    position: relative;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .do_comm::after {
+    content: "";
+    position: absolute;
+    right: 13px;
+    top: 12px;
+    width: 2rem;
+    height: 2px;
+    background-color: #F0F2F5;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .do_comm .top input {
+    border-radius: 15px;
+    padding: 5px 9px;
+    font-size: 13px;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .do_comm .top input::placeholder {
+    font-size: 13px;
+}
+
+.comms .comm .replies .reply_all_replies .single_reply .do_comm small {
+    font-size: 12px;
+    margin-right: 40px;
+    margin-top: 3px;
+}
+
+.comms .comm .replies .reply_all_replies .do_comm {
+    position: relative;
+}
+
+.comms .comm .replies .reply_all_replies .do_comm .flat_border2 {
+    position: absolute;
+    right: -23px;
+    top: 16px;
+    transform: translateY(-50%);
+    height: 2px;
+    width: 1rem;
+    background-color: #F0F2F5;
+}
+
+.comms .comm .commented-img {
+    border-radius: 15px;
+}
+
+/************************************
+comms_footer
+************************************/
+
+.post .comms_footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #65676B;
+}
+
+.post .comms_footer span:first-of-type {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.post .comms_footer span:first-of-type:hover {
+    text-decoration: underline;
+}
+
+.post .more_comm {
+    display: none;
+}
